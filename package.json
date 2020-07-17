@@ -32,6 +32,7 @@
     "apollo-client": "^2.6.10",
     "apollo-link": "^1.2.14",
     "bootstrap-css-only": "^4.4.1",
+    "eslint-config-google": "^0.14.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
     "karma-teamcity-reporter": "^1.1.0",

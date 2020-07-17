@@ -1,1 +1,37 @@
-<p>search-customers works!</p>
+<div class="container" style="margin-top: 45px;">
+
+  <div *ngIf="customers">
+    <table class="table table-hover table-bordered table-info">
+
+      <thead class="thead-dark">
+        <th>Customers</th>
+        <th>Master</th>
+        <th *ngFor="let location of locations">
+          {{location}}
+        </th>
+      </thead>
+      <tbody *ngFor="let customer of customers | paginate: { itemsPerPage: count, currentPage: p, totalItems: pageInfo.total }">
+        <tr>
+          <td>{{customer.node.name}}</td>
+          <td>
+            <a href="javascript:overlay(customer.node.masterVersion)">{{customer.node.masterVersion}}</a>
+          </td>
+          <ng-container *ngFor="let location of locations">
+            <td *ngIf="customer.node.locations[location]; else filler">
+              <a href="javascript:overlay(customer.node.locations[location].version)">{{customer.node.locations[location].version}}</a>
+            </td>
+          </ng-container>
+        </tr>
+
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+</div>
+
+<ng-template #filler>
+  <td>
+    <a> </a>
+  </td>
+<ng-template>

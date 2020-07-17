@@ -1,27 +1,29 @@
-# ApolloclientDemo
+# Apolloclient Demo
+Every wonder what the difference is in price by region? This demo has fake data that will tell you! Simply line up your customer and location to see how much they spent in each region for the same product.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+## Certified for use with:
+* **node**: v12.18.2
+* **npm**: v6.14.5
+* **angular**: v10.0.4
 
-## Development server
+## Up and Running
+You will need a running instance of the apolloserver_demo before this Angular pure client has any data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+On your local environment install the angular CLI like this
+`npm install -g @angular/cli@^10`
+Also, it's a good idea for you to install the compiler cli as well
+`npm install -g @angular/compiler-cli@^10`
 
-## Code scaffolding
+see the "development_tools" directory for further information and useful files
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Starting and stopping
+For now, when developing the following commands preferable in separate windows
+on the command-line (tmux is good).
+**Start**: `npm start`
+**Stop**: `npm stop`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Tests
+### code coverage
+npm run coverage
+### Jasmine/Karma Tests
+npm run ng-test-headless

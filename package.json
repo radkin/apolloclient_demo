@@ -1,15 +1,20 @@
 {
   "name": "apolloclient-demo",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Angular Apollo pure client demo",
   "scripts": {
+    "test": "ng test --source-map=false --karma-config ./src/laptop_dev.conf.js",
+    "start": "pm2 start ng -- serve --proxy-config proxy.conf.json --disable-host-check; pm2 start server.js",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "stop": "pm2 stop server; pm2 stop ng",
+    "debug": "DEBUG=express:* node server.js",
+    "coverage": "ng test --no-watch --code-coverage",
+    "ng-test-headless": "ng test --watch=false --browsers=ChromeHeadless"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~10.0.4",
     "@angular/common": "~10.0.4",
@@ -27,8 +32,10 @@
     "apollo-client": "^2.6.10",
     "apollo-link": "^1.2.14",
     "bootstrap-css-only": "^4.4.1",
+    "eslint-config-google": "^0.14.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
+    "karma-teamcity-reporter": "^1.1.0",
     "ngx-logger": "^4.1.9",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.6.0",

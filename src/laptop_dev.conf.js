@@ -11,16 +11,18 @@ module.exports = function(config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-teamcity-reporter'),
     ],
     client: {
-      clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      clearContext: false,
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/apolloclient-demo'),
+      dir: require('path').join(__dirname, '../coverage/apollo_client_demo'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
     },
     reporters: ['progress', 'kjhtml'],
+    browserNoActivityTimeout: 600000,
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

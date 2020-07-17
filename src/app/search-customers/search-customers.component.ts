@@ -60,7 +60,7 @@ export class SearchCustomersComponent implements OnInit {
         }`
       })
       .valueChanges.pipe(map(
-          (response) => response
+          (response) => <any> response
         ))
         .subscribe((response: CustomResponse) => {
           this.logger.debug('searchCustomers()', response);

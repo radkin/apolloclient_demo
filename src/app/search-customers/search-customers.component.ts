@@ -7,6 +7,10 @@ import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
 // custom
 import { DataSharingService } from '../services/data-sharing.service';
+import { Customer } from '../model/customer';
+import { PageInfo } from '../model/page-info';
+import { Edges } from '../model/edges';
+import { Node } from '../model/node';
 
 export interface CustomResponse {
   data: any;
@@ -18,8 +22,20 @@ export interface CustomResponse {
   styleUrls: ['./search-customers.component.css']
 })
 export class SearchCustomersComponent implements OnInit {
-  customers: object;
-  pageInfo: object;
+  customer = new Customer(null, null);
+  pageInfo = new PageInfo('','','','','','');
+  node: Node = {
+    name: '',
+    masterVersion: '',
+    locations: []
+  }
+  edges = new Edges(this.node)
+  newCustomer: Customer = {
+    pageInfo: this.pageInfo, edges: this.edges
+  }
+
+  customers: Array<Customer> = [this.newCustomer];
+
   p = 1;
   count = 16;
   locations: Array<string>;

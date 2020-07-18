@@ -68,7 +68,7 @@ export class SearchCustomersComponent implements OnInit {
             edges {
               node {
                 name
-                masterVersion
+                price
                 locations
               }
             }

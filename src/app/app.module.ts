@@ -17,7 +17,6 @@ import { SearchCustomersComponent } from './search-customers/search-customers.co
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalErrorHandler } from './global-error.handler';
-import { SearchArtifactsPipe } from './pipes/search-artifacts.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { SearchArtifactsPipe } from './pipes/search-artifacts.pipe';
     SearchCustomersComponent,
     HeaderComponent,
     FooterComponent,
-    SearchArtifactsPipe
   ],
   imports: [
     BrowserModule,

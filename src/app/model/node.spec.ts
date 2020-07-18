@@ -2,7 +2,7 @@ import { Node } from './node';
 
 const node: Node = {
   name: '',
-  price: '',
+  baselinePrice: '',
   locations: []
 }
 
@@ -10,7 +10,7 @@ describe('Node', () => {
   it('should create an instance', () => {
     expect(new Node(
       node.name,
-      node.price,
+      node.baselinePrice,
       node.locations
     )).toBeTruthy();
   });

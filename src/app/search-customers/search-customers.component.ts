@@ -26,7 +26,7 @@ export class SearchCustomersComponent implements OnInit {
   pageInfo = new PageInfo('','','','','','');
   node: Node = {
     name: '',
-    masterVersion: '',
+    baselinePrice: '',
     locations: []
   }
   edges = new Edges(this.node)
@@ -68,7 +68,7 @@ export class SearchCustomersComponent implements OnInit {
             edges {
               node {
                 name
-                price
+                baselinePrice
                 locations
               }
             }

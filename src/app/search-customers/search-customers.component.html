@@ -4,7 +4,7 @@
     <table class="table table-hover table-bordered table-info">
 
       <thead class="thead-dark">
-        <th>Customer</th>
+        <th>Customer / Department</th>
         <th>Baseline</th>
         <th *ngFor="let location of locations">
           {{location}}
@@ -14,11 +14,11 @@
         <tr>
           <td>{{customer.node.name}}</td>
           <td>
-            <a href="javascript:overlay(customer.node.price)">{{customer.node.price}}</a>
+            <a href="javascript:overlay(customer.node.baselinebaselinePrice)">${{customer.node.baselinePrice}}</a>
           </td>
           <ng-container *ngFor="let location of locations">
             <td *ngIf="customer.node.locations[location]; else filler">
-              <a href="javascript:overlay(customer.node.locations[location].version)">{{customer.node.locations[location].version}}</a>
+              <a href="javascript:overlay(customer.node.locations[location].price)">${{customer.node.locations[location].price}}</a>
             </td>
           </ng-container>
         </tr>

@@ -1,7 +1,7 @@
 export class Node {
   constructor (
     public name: string,
-    public masterVersion: string,
+    public baselinePrice: string,
     public locations: []
   ) {}
 }

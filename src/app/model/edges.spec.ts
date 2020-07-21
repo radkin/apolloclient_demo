@@ -3,7 +3,7 @@ import { Edges } from './edges';
 
 const node: Node = {
   name: '',
-  masterVersion: '',
+  baselinePrice: '',
   locations: []
 }
 

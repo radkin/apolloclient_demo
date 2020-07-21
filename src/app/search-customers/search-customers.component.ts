@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import {  map } from 'rxjs/operators';
-import { NGXLogger } from 'ngx-logger';
+// import { NGXLogger } from 'ngx-logger';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
 // custom
@@ -41,10 +41,11 @@ export class SearchCustomersComponent implements OnInit {
   locations: Array<string>;
   queryField: FormControl = new FormControl();
   query$: Subscription;
+  query = '';
   public searchString = '';
 
   constructor(
-    private logger: NGXLogger,
+    // private logger: NGXLogger,
     private apollo: Apollo,
     private dataSharingService: DataSharingService
   ) {
@@ -79,7 +80,8 @@ export class SearchCustomersComponent implements OnInit {
           (response) => <any> response
         ))
         .subscribe((response: CustomResponse) => {
-          this.logger.debug('searchCustomers()', response);
+          console.log(response);
+          // this.logger.debug('searchCustomers()', response);
           this.customers = response.data.searchCustomers.edges;
           this.pageInfo = response.data.searchCustomers.pageInfo;
         });

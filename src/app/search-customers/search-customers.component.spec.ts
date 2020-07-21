@@ -1,8 +1,8 @@
-/*
-import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+
+// import { NGXLogger, LoggerModule, NgxLoggerLevel, NGXLoggerMock } from 'ngx-logger';
 import { ApolloTestingController, ApolloTestingModule } from 'apollo-angular/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 // custom
@@ -11,21 +11,24 @@ import { PageInfo } from '../model/page-info';
 import { Node } from '../model/node';
 import { Edges } from '../model/edges';
 import { SearchCustomersComponent } from './search-customers.component';
+// import { DataSharingService } from '../services/data-sharing.service';
 
 describe('SearchCustomersComponent', () => {
-  let component: SearchCustomersComponent = null;
+  let component: SearchCustomersComponent;
   let fixture: ComponentFixture<SearchCustomersComponent>;
-  const searchCustomersComponent = new SearchCustomersComponent(null, null, null);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      // providers: [
+      //    { provide: NGXLogger, useClass: NGXLoggerMock }
+      // ],
       imports: [ApolloTestingModule, HttpClientTestingModule,
         NgxPaginationModule, ReactiveFormsModule,
-        LoggerModule.forRoot({
-          level: NgxLoggerLevel.TRACE,
-          serverLogLevel: NgxLoggerLevel.ERROR,
-          disableConsoleLogging: false
-        }),
+        // LoggerModule.forRoot({
+        //   level: NgxLoggerLevel.TRACE,
+        //   serverLogLevel: NgxLoggerLevel.ERROR,
+        //   disableConsoleLogging: false
+        // }),
       ],
       declarations: [ SearchCustomersComponent ]
     })
@@ -33,6 +36,10 @@ describe('SearchCustomersComponent', () => {
   }));
 
   beforeEach(() => {
+    // const apollo = TestBed.get(ApolloTestingController);
+    // const dataShare = new DataSharingService;
+    // const dataShareQuery = TestBed.get(dataShare);
+    // const searchCustomersComponent = new SearchCustomersComponent(apollo, dataShareQuery);
     fixture = TestBed.createComponent(SearchCustomersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -46,24 +53,21 @@ describe('SearchCustomersComponent', () => {
     expect(SearchCustomersComponent).not.toBeNull();
   });
 
-  it('should be no applications if there is no data', () => {
-    expect(searchCustomersComponent.customer.edges.node.name.length).toBe(0);
-  });
-
-  it('should be customers if there is data', () => {
-    const node: Node = {
-      name: '',
-      masterVersion: '',
-      locations: []
-    }
+  it('should be customer data', () => {
+    const node = new Node('coal-kitchen', '$7.00', [] );
     const customer: Customer = {
-      pageInfo: new PageInfo('','','','','',''),
+      pageInfo: new PageInfo('1','','','','',''),
       edges: new Edges(node)
     };
     const customers: Array<Customer> = [customer];
-    searchCustomersComponent.customers = customers;
-    expect(searchCustomersComponent.customers.length).toBe(1);
+    component.customers = customers;
+    expect(component.customers.length >=1).toBeTruthy();
+    component.customers.forEach(comp => {
+      expect(comp.pageInfo.total).toBe('1');
+      expect(comp.edges.node.name).toBe('coal-kitchen');
+    });
+
+
   });
 
 });
-*/

@@ -48,8 +48,9 @@ cp -r /home/tools/indy/dist/artifacts/* /var/www/html/
 
 cd ~/$APP
 
-# Tests
+# assuming linting is done in the review build
+
 ## Angular code coverage
-npm coverage
+npm run coverage
 ## Angular Jasmine/Karma Tests
-npm ng-test-headless
+npm run ng-test-headless

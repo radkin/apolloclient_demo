@@ -7,7 +7,7 @@ const pageInfo: PageInfo = {
   startCursor: '',
   endCursor: '',
   queryDuration: ''
-}
+};
 
 describe('PageInfo', () => {
   it('should create an instance', () => {

@@ -1,5 +1,5 @@
 export class Node {
-  constructor (
+  constructor(
     public name: string,
     public baselinePrice: string,
     public locations: []

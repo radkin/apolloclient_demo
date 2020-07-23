@@ -7,10 +7,10 @@ const node: Node = {
   name: '',
   baselinePrice: '',
   locations: []
-}
+};
 
 const customer: Customer = {
-  pageInfo: new PageInfo('','','','','',''),
+  pageInfo: new PageInfo('', '', '', '', '', ''),
   edges: new Edges(node)
 };
 

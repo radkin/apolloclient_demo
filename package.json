@@ -1,24 +1,26 @@
 {
   "name": "apolloclient-demo",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author": "Noel Miller",
+  "license": "MIT",
   "description": "Angular Apollo pure client demo",
   "scripts": {
-    "test": "ng test --source-map=false --karma-config ./src/laptop_dev.conf.js",
-    "start": "pm2 start ng -- serve --proxy-config proxy.conf.json --disable-host-check; pm2 start server.js",
-    "ng": "ng",
-    "build": "ng build --prod",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "stop": "pm2 stop server; pm2 stop ng",
-    "debug": "DEBUG=express:* node server.js",
-    "coverage": "ng test --no-watch --code-coverage",
-    "ng-test-headless": "ng test --watch=false --browsers=ChromeHeadless"
+    "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
+    "start": "node node_modules/@angular/cli/bin/ng serve",
+    "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
+    "lint": "node node_modules/@angular/cli/bin/ng lint",
+    "e2e": "node node_modules/@angular/cli/bin/ng e2e",
+    "coverage": "node node_modules/@angular/cli/bin/ng test --no-watch --code-coverage",
+    "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": false,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.1000.3",
     "@angular/animations": "~10.0.4",
+    "@angular/cli": "~10.0.3",
     "@angular/common": "~10.0.4",
     "@angular/compiler": "~10.0.4",
+    "@angular/compiler-cli": "^10.0.5",
     "@angular/core": "~10.0.4",
     "@angular/forms": "~10.0.4",
     "@angular/localize": "^10.0.4",
@@ -35,17 +37,15 @@
     "eslint-config-google": "^0.14.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
-    "karma-teamcity-reporter": "^1.1.0",
     "ngx-logger": "^4.1.9",
     "ngx-pagination": "^5.0.0",
+    "pm2": "^4.4.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "typescript": "~3.9.7",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.3",
-    "@angular/cli": "~10.0.3",
-    "@angular/compiler-cli": "~10.0.4",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -55,11 +55,11 @@
     "karma": "~5.0.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~3.3.0",
+    "karma-teamcity-reporter": "^1.1.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-jasmine": "~3.3.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~3.9.7"
+    "tslint": "~6.1.0"
   }
 }

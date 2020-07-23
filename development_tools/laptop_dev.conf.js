@@ -17,7 +17,7 @@ module.exports = function(config) {
       clearContext: false,
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage/apollo_client_demo'),
+      dir: require('path').join(__dirname, '../coverage/apolloclient_demo'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
     },

@@ -23,16 +23,16 @@ export interface CustomResponse {
 })
 export class SearchCustomersComponent implements OnInit {
   customer = new Customer(null, null);
-  pageInfo = new PageInfo('','','','','','');
+  pageInfo = new PageInfo('', '', '', '', '', '');
   node: Node = {
     name: '',
     baselinePrice: '',
     locations: []
-  }
-  edges = new Edges(this.node)
+  };
+  edges = new Edges(this.node);
   newCustomer: Customer = {
     pageInfo: this.pageInfo, edges: this.edges
-  }
+  };
 
   customers: Array<Customer> = [this.newCustomer];
 
@@ -77,7 +77,7 @@ export class SearchCustomersComponent implements OnInit {
         }`
       })
       .valueChanges.pipe(map(
-          (response) => <any> response
+          (response) => response as any
         ))
         .subscribe((response: CustomResponse) => {
           console.log(response);

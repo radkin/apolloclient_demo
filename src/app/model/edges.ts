@@ -1,7 +1,7 @@
 import { Node } from './node';
 
 export class Edges {
-  constructor (
+  constructor(
     public node: Node
   ) {}
 }

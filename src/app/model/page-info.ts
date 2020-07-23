@@ -1,5 +1,5 @@
 export class PageInfo {
-  constructor (
+  constructor(
     public total: string,
     public hasNextPage: string,
     public hasPreviousPage: string,

@@ -4,7 +4,7 @@ const node: Node = {
   name: '',
   baselinePrice: '',
   locations: []
-}
+};
 
 describe('Node', () => {
   it('should create an instance', () => {

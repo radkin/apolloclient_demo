@@ -5,11 +5,11 @@ const node: Node = {
   name: '',
   baselinePrice: '',
   locations: []
-}
+};
 
 const edges: Edges = {
-  node: node
-}
+  node
+};
 
 describe('Edges', () => {
   it('should create an instance', () => {

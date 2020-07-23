@@ -56,12 +56,12 @@ describe('SearchCustomersComponent', () => {
   it('should be customer data', () => {
     const node = new Node('coal-kitchen', '$7.00', [] );
     const customer: Customer = {
-      pageInfo: new PageInfo('1','','','','',''),
+      pageInfo: new PageInfo('1', '', '', '', '', ''),
       edges: new Edges(node)
     };
     const customers: Array<Customer> = [customer];
     component.customers = customers;
-    expect(component.customers.length >=1).toBeTruthy();
+    expect(component.customers.length >= 1).toBeTruthy();
     component.customers.forEach(comp => {
       expect(comp.pageInfo.total).toBe('1');
       expect(comp.edges.node.name).toBe('coal-kitchen');

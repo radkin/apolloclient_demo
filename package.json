@@ -7,6 +7,7 @@
   "scripts": {
     "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
     "start_dev": "node node_modules/@angular/cli/bin/ng serve",
+    "heroku-prebuild": "./generate_env.sh",
     "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
     "ng-lint": "node node_modules/@angular/cli/bin/ng lint",
     "lint": "node node_modules/eslint/bin/eslint .",

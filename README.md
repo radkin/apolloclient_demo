@@ -7,11 +7,7 @@ Ever wonder what the difference is in price by region? This demo has fake data t
 * **angular**: v10.0.4
 
 ## Up and Running
-You will need a running instance of the apolloserver_demo before this Angular pure client has any data. Please remember to run the test to populate redis with data. For local laptop and a locally running instance of apolloserver there is no need to do anything else. If you are running in any other environment there needs to be a `./apolloclient_demo/.env` file with a single entry like this example:
-
-```bash
-APOLLO_SERVER="http://localhost:9000/api/graphql"
-```
+You will need a running instance of the apolloserver_demo before this Angular pure client has any data. Please remember to run the test to populate redis with data. For local laptop and a locally running instances of apolloserver there is no need to do anything else. If deploying to Heroku hard set the apolloserver setting as there is nothing hidden in a pure client (browser). What is the point in trying to hide the backend server's URL when you can find it in the client code via your browser?
 
 see the "development_tools" directory for further information and useful files
 

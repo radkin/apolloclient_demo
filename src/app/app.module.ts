@@ -18,6 +18,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalErrorHandler } from './global-error.handler';
 
+// if the .env file is missing default to localhost:9000
+const apolloServer = process.env.APOLLO_SERVER || 'http://localhost:9000/api/graphql';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,7 @@ import { GlobalErrorHandler } from './global-error.handler';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: '/api/graphql'
+            uri: apolloServer
           })
         };
       },

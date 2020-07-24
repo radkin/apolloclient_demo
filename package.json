@@ -1,18 +1,19 @@
 {
   "name": "apolloclient-demo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Noel Miller",
   "license": "MIT",
   "description": "Angular Apollo pure client demo",
   "scripts": {
     "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
-    "start": "node node_modules/@angular/cli/bin/ng serve",
+    "start_dev": "node node_modules/@angular/cli/bin/ng serve",
     "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
     "ng-lint": "node node_modules/@angular/cli/bin/ng lint",
     "lint": "node node_modules/eslint/bin/eslint .",
     "e2e": "node node_modules/@angular/cli/bin/ng e2e",
     "coverage": "node node_modules/@angular/cli/bin/ng test --no-watch --code-coverage",
-    "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless"
+    "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless",
+    "start": "node node_modules/angular-http-server/lib/angular-http-server --path ./dist/apolloclient-demo -p $PORT"
   },
   "private": false,
   "dependencies": {
@@ -29,6 +30,7 @@
     "@angular/platform-browser-dynamic": "~10.0.4",
     "@angular/router": "~10.0.4",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "angular-http-server": "^1.9.0",
     "apollo-angular": "^1.10.0",
     "apollo-angular-link-http": "^1.11.0",
     "apollo-cache-inmemory": "^1.6.6",

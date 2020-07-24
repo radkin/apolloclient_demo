@@ -6,14 +6,14 @@
   "description": "Angular Apollo pure client demo",
   "scripts": {
     "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
-    "start": "node node_modules/@angular/cli/bin/ng serve",
+    "start_dev": "node node_modules/@angular/cli/bin/ng serve",
     "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
     "ng-lint": "node node_modules/@angular/cli/bin/ng lint",
     "lint": "node node_modules/eslint/bin/eslint .",
     "e2e": "node node_modules/@angular/cli/bin/ng e2e",
     "coverage": "node node_modules/@angular/cli/bin/ng test --no-watch --code-coverage",
     "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless",
-    "heroku-postbuild": "node node_modules/angular-http-server --path /dist"
+    "start": "node node_modules/angular-http-server --path /dist"
   },
   "private": false,
   "dependencies": {

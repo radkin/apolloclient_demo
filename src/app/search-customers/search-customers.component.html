@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 45px;">
 
-  <div *ngIf="customers.length > 1">
+  <div *ngIf="customers.length > 1; else spinner">
     <table class="table table-hover table-bordered table-info">
 
       <thead class="thead-dark">
@@ -34,4 +34,13 @@
   <td>
     <a> </a>
   </td>
-<ng-template>
+</ng-template>
+
+<ng-template #spinner>
+  <div class="app-loading">
+    <div class="logo"></div>
+    <svg class="spinner" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+  </div>
+</ng-template>

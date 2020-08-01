@@ -18,8 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalErrorHandler } from './global-error.handler';
 
-// const apolloServer = 'http://localhost:9000/api/graphql';
-const apolloServer = 'https://apolloserver-demo.herokuapp.com/graphql';
+const apolloServer = 'http://localhost:9000/api/graphql';
 
 @NgModule({
   declarations: [

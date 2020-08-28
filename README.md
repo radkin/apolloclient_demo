@@ -27,3 +27,10 @@ For other environments: `npm run ng-test-headless`
 ### Linting
 typescript: `npm run ng-lint`
 all else: `npm run lint`
+
+## Distributed Microservices Demo
+"Apollo Client Demo" is part of a complete distributed microservices demo that has a backend running "Apollo Server Demo" found [here](https://github.com/radkin/apolloserver_demo).
+![root directory](src/assets/Apollo_client_server.png)
+
+## Author
+radkin@github.com (not a proper email address)

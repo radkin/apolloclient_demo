@@ -47,3 +47,7 @@ Thumbs.db
 
 # environment variables
 .env
+
+# firebase
+/src/firebase-config.js
+.firebase

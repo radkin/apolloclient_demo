@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apolloServer: 'https://apolloserver-demo.herokuapp.com/graphql'
 };

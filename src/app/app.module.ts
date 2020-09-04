@@ -10,6 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { environment } from './../environments/environment';
 
 // custom
 import { AppComponent } from './app.component';
@@ -18,8 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GlobalErrorHandler } from './global-error.handler';
 
-// const apolloServer = 'http://localhost:9000/api/graphql';
-const apolloServer = 'https://apolloserver-demo.herokuapp.com/graphql';
+const apolloServer = environment.apolloServer;
 
 @NgModule({
   declarations: [

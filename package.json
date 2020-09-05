@@ -6,7 +6,7 @@
   "description": "Angular Apollo pure client demo",
   "scripts": {
     "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
-    "travis_test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/travis.conf.js",
+    "travis_test": "node node_modules/@angular/cli/bin/ng test --watch=false --source-map=false --karma-config ./development_tools/travis.conf.js",
     "start_dev": "node node_modules/@angular/cli/bin/ng serve",
     "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
     "ng-lint": "node node_modules/@angular/cli/bin/ng lint",

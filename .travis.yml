@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "12.18.2"
 script:
-#  - npm run test
-#  - npm run coverage
+  - npm run test
+  - npm run coverage
   - echo "Building"
   - npm install
   - npm run build

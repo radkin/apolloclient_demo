@@ -6,6 +6,7 @@
   "description": "Angular Apollo pure client demo",
   "scripts": {
     "test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/laptop_dev.conf.js",
+    "travis_test": "node node_modules/@angular/cli/bin/ng test --source-map=false --karma-config ./development_tools/travis.conf.js",
     "start_dev": "node node_modules/@angular/cli/bin/ng serve",
     "build": "node node_modules/@angular/cli/bin/ng build --prod --aot --vendor-chunk --common-chunk --delete-output-path --buildOptimizer",
     "ng-lint": "node node_modules/@angular/cli/bin/ng lint",
@@ -14,8 +15,7 @@
     "coverage": "node node_modules/@angular/cli/bin/ng test --no-watch --code-coverage",
     "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless",
     "start": "node node_modules/angular-http-server/lib/angular-http-server --path ./dist/apolloclient-demo -p $PORT",
-    "pree2e": "webdriver-manager update --versions.chrome=77.0.3865.40",
-    "e2e": "ng e2e --webdriver-update false"
+    "prekarma": "webdriver-manager update --versions.chrome=77.0.3865.40"
   },
   "private": false,
   "dependencies": {

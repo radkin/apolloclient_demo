@@ -13,7 +13,7 @@ script:
   - echo "Testing"
   - npm run prekarma
   - npm run travis_test
-  # - npm run coverage
+  - npm run coverage
   - echo "Building"
   - npm run build
   - echo "Deploying"

@@ -12,8 +12,8 @@ script:
   - npm install
   - echo "Testing"
   - npm run prekarma
-  - npm run travis_test
-  - npm run coverage
+  - npm run ng-test-headless
+  # - npm run coverage
   - echo "Building"
   - npm run build
   - echo "Deploying"

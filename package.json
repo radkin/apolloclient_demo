@@ -13,7 +13,9 @@
     "e2e": "node node_modules/@angular/cli/bin/ng e2e",
     "coverage": "node node_modules/@angular/cli/bin/ng test --no-watch --code-coverage",
     "ng-test-headless": "node node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless",
-    "start": "node node_modules/angular-http-server/lib/angular-http-server --path ./dist/apolloclient-demo -p $PORT"
+    "start": "node node_modules/angular-http-server/lib/angular-http-server --path ./dist/apolloclient-demo -p $PORT",
+    "pree2e": "webdriver-manager update --versions.chrome=77.0.3865.40",
+    "e2e": "ng e2e --webdriver-update false"
   },
   "private": false,
   "dependencies": {

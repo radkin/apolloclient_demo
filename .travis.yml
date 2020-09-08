@@ -10,15 +10,23 @@ node_js:
   - "12.18.2"
 script:
   - npm install
-  - echo "Testing"
-  - npm run lint
-  - npm run prekarma
-  - npm run ng-test-headless
-  - npm run ng-test-headless-coverage
-  - echo "Building"
-  - npm run build
-  - echo "Deploying"
-install:
-  - npm install -g firebase-tools
-after-success:
-  - firebase deploy --token $FIREBASE_TOKEN
+
+jobs:
+  include:
+    - stage: Test, Unit, Lint, Coverage
+      script:
+        - npm run lint
+        - npm run prekarma
+        - npm run ng-test-headless
+        - npm run ng-test-headless-coverage
+
+    - stage: Deploy, Firebase serverless architecture
+      if: branch = master
+      script:
+        - echo "Building"
+        - npm run build
+        - echo "Deploying"
+      install:
+        - npm install -g firebase-tools
+      after-success:
+        - firebase deploy --token $FIREBASE_TOKEN

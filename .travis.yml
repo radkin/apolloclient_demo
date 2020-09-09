@@ -8,13 +8,12 @@ addons:
       - google-chrome-stable
 node_js:
   - "12.18.2"
-script:
-  - npm install
 
 jobs:
   include:
     - stage: Test, Unit, Lint, Coverage
       script:
+        - npm install
         - npm run lint
         - npm run prekarma
         - npm run ng-test-headless
@@ -24,6 +23,7 @@ jobs:
       if: branch = master
       script:
         - echo "Building"
+        - npm install
         - npm run build
         - echo "Deploying"
       install:

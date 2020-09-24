@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import {  map } from 'rxjs/operators';
-// import { NGXLogger } from 'ngx-logger';
 import {Apollo} from 'apollo-angular';
 import gql from 'graphql-tag';
 // custom
@@ -45,7 +44,6 @@ export class SearchCustomersComponent implements OnInit {
   public searchString = '';
 
   constructor(
-    // private logger: NGXLogger,
     private apollo: Apollo,
     private dataSharingService: DataSharingService
   ) {

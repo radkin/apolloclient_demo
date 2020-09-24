@@ -1,5 +1,4 @@
 
-// import { NGXLogger, LoggerModule, NgxLoggerLevel, NGXLoggerMock } from 'ngx-logger';
 import { ApolloTestingController, ApolloTestingModule } from 'apollo-angular/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -19,16 +18,9 @@ describe('SearchCustomersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      // providers: [
-      //    { provide: NGXLogger, useClass: NGXLoggerMock }
-      // ],
+
       imports: [ApolloTestingModule, HttpClientTestingModule,
         NgxPaginationModule, ReactiveFormsModule,
-        // LoggerModule.forRoot({
-        //   level: NgxLoggerLevel.TRACE,
-        //   serverLogLevel: NgxLoggerLevel.ERROR,
-        //   disableConsoleLogging: false
-        // }),
       ],
       declarations: [ SearchCustomersComponent ]
     })

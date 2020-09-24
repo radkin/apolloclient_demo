@@ -1,18 +1,11 @@
-
-<div
-  gdAreas="header header | content content | footer footer"
-  gdGap="16px"
-  gdRows="auto auto auto"
-  gdAreas.lt-md="header | content | content | footer"
-  gdRows.lt-md="auto auto auto auto"
-  >
-  <div gdArea="header">
-    <app-header></app-header>
-   </div>
-  <div gdArea="content">
-    <router-outlet></router-outlet>
+  <div class="container">
+    <div gdArea="header" class="header">
+      <app-header></app-header>
+     </div>
+    <div gdArea="content" class="content">
+      <app-search-customers></app-search-customers>
+    </div>
+    <div gdArea="footer" class="footer">
+      <app-footer></app-footer>
+    </div>
   </div>
-  <div gdArea="footer">
-    <app-footer></app-footer>
-  </div>
-</div>

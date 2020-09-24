@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { GraphQLModule } from './graphql.module';
@@ -37,12 +36,6 @@ const apolloServer = environment.apolloServer;
     ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
-    LoggerModule.forRoot({
-      serverLoggingUrl: '/api/logs:9200',
-      level: NgxLoggerLevel.TRACE,
-      serverLogLevel: NgxLoggerLevel.INFO,
-      disableConsoleLogging: false
-    }),
     GraphQLModule
   ],
   providers: [

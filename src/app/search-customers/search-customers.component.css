@@ -49,3 +49,11 @@
     stroke-dashoffset: -124px;
   }
 }
+
+.container {
+  margin-top: 50px;
+  min-width:100%;
+  min-height:100%;
+  width:auto;
+  height:auto;
+}

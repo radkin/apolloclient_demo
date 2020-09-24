@@ -1,7 +1,16 @@
-.cardInner {
+.container {
   display: grid;
-  grid-template-areas: "header header" "footer footer";
-  grid-template-rows: auto auto auto;
-  grid-row-gap: 16px;
-  grid-column-gap: 16px;
+  justify-content: center;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

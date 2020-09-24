@@ -1,6 +1,6 @@
 {
   "name": "apolloclient-demo",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "author": "Noel Miller",
   "license": "MIT",
   "description": "Angular Apollo pure client demo",

@@ -7,10 +7,19 @@
     "footer";
 }
 
+.header {
+  grid-area: header;
+}
+
 .content {
   position: absolute;
+  margin-top: inherit;
   top: 0;
   left: 0;
-  height: 100%;
+  height: inherit;
   width: 100%;
+}
+
+.footer {
+  grid-area: footer;
 }
